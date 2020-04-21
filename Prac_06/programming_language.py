@@ -1,5 +1,3 @@
-
-
 class ProgrammingLanguage:
     def __init__(self, name="", typing="", reflection=True, year=0):
         self.name = name
@@ -14,6 +12,7 @@ class ProgrammingLanguage:
             return False
 
     def __str__(self):
-        return "{}, {} Typing, Reflection={}, First appeared in {}".format(self.name, self.typing, self.reflection, self.year)
+        return "{}, {} Typing, Reflection={}, First appeared in {}".format(self.name, self.typing, self.reflection,
+                                                                           self.year)
 
     "Python, Dynamic Typing, Reflection=True, First appeared in 1991"
