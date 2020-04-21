@@ -11,5 +11,12 @@ class Guitar:
         return "{} ({}) : ${}".format(self.name, self.year, self.cost)
 
     def get_age(self):
-        age = 2020 - self.year
-        return age
+        self.age = 2020 - self.year
+        print(self.age)
+
+    def is_vintage(self):
+        if self.age >= 50:
+            return True
+        else:
+            return False
+

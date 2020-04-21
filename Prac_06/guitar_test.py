@@ -5,5 +5,7 @@ guitar = Guitar("Gibson L-5 CES", 1922, 16035.40)
 guitar1 = Guitar("ye", 2001, 20)
 
 
-print(guitar.get_age())
+guitar.get_age()
+
+print(guitar.is_vintage())
 
