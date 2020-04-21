@@ -13,3 +13,7 @@ class ProgrammingLanguage:
         else:
             return False
 
+    def __str__(self):
+        return "{}, {} Typing, Reflection={}, First appeared in {}".format(self.name, self.typing, self.reflection, self.year)
+
+    "Python, Dynamic Typing, Reflection=True, First appeared in 1991"
