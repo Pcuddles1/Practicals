@@ -10,7 +10,8 @@ BoxLayout:
     Button:
         text: 'Greet'
         on_press: app.handle_greet()
-    Label:
+    Button:
         text: 'Clear'
         color: (1, 1, 0, 1)
         id: output_label
+        on_press: app.clear_greet()
