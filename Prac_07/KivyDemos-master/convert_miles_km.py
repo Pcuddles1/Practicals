@@ -3,6 +3,7 @@ from kivy.lang import Builder
 from kivy.core.window import Window
 from kivy.app import StringProperty
 
+MILES_TO_KM = 1.609
 
 class ConvertDistanceApp(App):
     message = StringProperty()
@@ -13,7 +14,7 @@ class ConvertDistanceApp(App):
         return self.root
     def convert_miles(self):
         valid = self.check_valid()
-        self.message = str(valid*1.609)
+        self.message = str(valid*MILES_TO_KM)
     def handle_increment(self, change):
         valid = self.check_valid() + change
         self.root.ids.user_input.text = str(valid)
