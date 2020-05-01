@@ -12,9 +12,18 @@ class ConvertDistanceApp(App):
         self.root = Builder.load_file('convert_miles_km')
         return self.root
     def convert_miles(self):
-        self.message = str(float(self.root.ids.user_input.text)*1.609)
+        valid = self.check_value()
+        self.message = str(valid*1.609)
     def handle_increment(self, change):
-        self.root.ids.user_input.text = str(float(self.root.ids.user_input.text) + change)
+        valid = self.check_value() + change
+        self.root.ids.user_input.text = str(value)
         self.convert_miles()
+    def check_value(self):
+        try:
+            valid = self.root.ids.user_input.text
+            return valid
+        except ValueError:
+            return 0
+
 
 ConvertDistanceApp().run()
