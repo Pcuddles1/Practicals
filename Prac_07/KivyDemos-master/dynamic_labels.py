@@ -3,6 +3,7 @@ from kivy.lang import Builder
 from kivy.uix.button import Button
 from kivy.properties import StringProperty
 
+
 class DynamicLabelsApp(App):
     status_text = StringProperty()
 
@@ -17,9 +18,7 @@ class DynamicLabelsApp(App):
         self.create_widgets()
         return self.root
 
-
     def create_widgets(self):
-
         """Create buttons from dictionary entries and add them to the GUI."""
         for name in self.names:
             # create a button for each data entry, specifying the text and id

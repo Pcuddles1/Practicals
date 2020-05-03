@@ -19,7 +19,8 @@ class DynamicWidgetsApp(App):
         """Construct main app."""
         super().__init__(**kwargs)
         # basic data example - dictionary of names: phone numbers
-        self.name_to_phone = {"Bob Brown": "0414144411", "Cat Cyan": "0441411211", "Oren Ochre": "0432123456", "me" : "42u305"}
+        self.name_to_phone = {"Bob Brown": "0414144411", "Cat Cyan": "0441411211", "Oren Ochre": "0432123456",
+                              "me": "42u305"}
 
     def build(self):
         """Build the Kivy GUI."""
