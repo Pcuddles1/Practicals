@@ -9,3 +9,7 @@ class SilverServiceTaxi(Taxi):
         fare = super().get_fare()
         fare = (fare*self.fanciness)+self.flagfall
         return fare
+    def __str__(self):
+        return "{}, {}km on current fare, ${:.2f}/km plus flagfall of ${}, total of=${}".format(super().__str__(),
+                                                                       self.current_fare_distance,
+                                                                       self.price_per_km,self.flagfall, self.get_fare())
