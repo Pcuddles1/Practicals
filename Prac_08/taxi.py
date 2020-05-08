@@ -8,7 +8,6 @@ from Prac_08.car import Car
 class Taxi(Car):
     """Specialised version of a Car that includes fare costs."""
     price_per_km = 1.23
-    flagfall = 4.5
 
     def __init__(self, name, fuel):
         """Initialise a Taxi instance, based on parent class Car."""
@@ -17,13 +16,13 @@ class Taxi(Car):
 
     def __str__(self):
         """Return a string like a Car but with current fare distance."""
-        return "{}, {}km on current fare, ${:.2f}/km plus flagfall of ${}".format(super().__str__(),
+        return "{}, {}km on current fare, ${:.2f}/km".format(super().__str__(),
                                                              self.current_fare_distance,
-                                                             self.price_per_km, self.flagfall)
+                                                             self.price_per_km)
 
     def get_fare(self):
         """Return the price for the taxi trip."""
-        fare = (self.price_per_km * self.current_fare_distance)+self.flagfall
+        fare = (self.price_per_km * self.current_fare_distance)
         return fare
 
     def start_fare(self):
