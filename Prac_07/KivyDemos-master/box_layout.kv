@@ -4,6 +4,14 @@ BoxLayout:
     Button:
         text: 'one'
     Button:
-        text: 'two'
+
+        id: input_name
+        text: 'Pat'
     Button:
-        text: 'three'
+        text: 'Greet'
+        on_press: app.handle_greet()
+    Button:
+        text: 'Clear'
+        color: (1, 1, 0, 1)
+        id: output_label
+        on_press: app.clear_greet()
