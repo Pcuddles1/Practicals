@@ -15,9 +15,10 @@ def main():
 
 def get_fixed_filename(filename):
     new_name = filename.replace(" ", "_").replace(".TXT", ".txt")
-    for letter in filename:
-        if letter.isupper():
-            new_name = filename.()
+    for name in filename:
+        for letter in enumerate(name):
+
+
     print(new_name)
 
 main()
