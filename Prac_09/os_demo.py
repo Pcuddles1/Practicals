@@ -11,7 +11,7 @@ def main():
     print("Starting directory is: {}".format(os.getcwd()))
 
     # Change to desired directory
-    os.chdir('Lyrics/Christmas')
+    os.chdir('Lyrics\Christmas')
 
     # Print a list of all files in current directory
     print("Files in {}:\n{}\n".format(os.getcwd(), os.listdir('.')))
@@ -19,10 +19,11 @@ def main():
     # Make a new directory
     # The next time you run this, it will crash if the directory exists
 
-    try:
+    try :
         os.mkdir('temp')
     except FileExistsError:
         pass
+
     # Loop through each file in the (current) directory
     for filename in os.listdir('.'):
         # Ignore directories, just process files
@@ -34,10 +35,10 @@ def main():
 
 
         # Option 1: rename file to new name - in place
-        os.rename(filename, new_name)
+        #os.rename(filename, new_name)
 
         # Option 2: move file to new place, with new name
-        # shutil.move(filename, 'temp/' + new_name)
+        #shutil.move(filename, 'temp/' + new_name)
 
 
 def get_fixed_filename(filename):
@@ -55,8 +56,14 @@ def demo_walk():
         print("\tand files:", filenames)
         print("(Current working directory is: {})".format(os.getcwd()))
 
-        # TODO: add a loop to rename the files
+
+        for filename in filenames:
+            current_name = os.path.join(directory_name, filename)
+            print(current_name)
+            new_name = os.path.join(directory_name, get_fixed_filename(filename))
+            print(new_name)
+            os.rename(current_name, new_name)
 
 
-main()
-# demo_walk()
+#main()
+demo_walk()
