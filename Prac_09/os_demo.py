@@ -62,7 +62,10 @@ def demo_walk():
             print(current_name)
             new_name = os.path.join(directory_name, get_fixed_filename(filename))
             print(new_name)
-            os.rename(current_name, new_name)
+            try:
+                os.rename(current_name, new_name)
+            except FileExistsError:
+                pass
 
 
 #main()
